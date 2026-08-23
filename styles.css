@@ -95,21 +95,10 @@ img{max-width:100%}
   inset:0;
   background:
     linear-gradient(90deg,rgba(29,26,23,.72),rgba(29,26,23,.18)),
-    radial-gradient(circle at 75% 35%,rgba(255,250,244,.35),transparent 30%),
-    linear-gradient(135deg,#3a3027,#bfa98f 48%,#f4e8d8);
-}
-
-.hero-image:after{
-  content:"";
-  position:absolute;
-  right:8vw;
-  top:18vh;
-  width:min(42vw,560px);
-  height:68vh;
-  border-radius:260px 260px 18px 18px;
-  background:linear-gradient(145deg,#fff7eb,#8d7359);
-  box-shadow:var(--shadow);
-  opacity:.85;
+    url("images/IMG_4445.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
 .hero-content{
