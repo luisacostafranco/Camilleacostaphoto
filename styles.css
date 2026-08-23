@@ -93,13 +93,12 @@ img{max-width:100%}
 .hero-image{
   position:absolute;
   inset:0;
-  background:
-    linear-gradient(90deg,rgba(29,26,23,.72),rgba(29,26,23,.18)),
-    url("images/IMG_4445.jpg");
+  background-image:url("images/IMG_4445.jpg");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
 }
+
 
 .hero-content{
   position:relative;
