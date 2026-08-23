@@ -220,6 +220,7 @@ h3{font-size:1.7rem}
 }
 .about-image{
   min-height:560px;
+  width:100%;
   border-radius:260px 260px 28px 28px;
   background-image:url("images/IMG_0286.JPG");
   background-size:cover;
