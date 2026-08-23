@@ -93,7 +93,9 @@ img{max-width:100%}
 .hero-image{
   position:absolute;
   inset:0;
-  background-image:url("images/IMG_4445.jpg");
+  background-image:
+    linear-gradient(90deg,rgba(29,26,23,.68),rgba(29,26,23,.12)),
+    url("images/IMG_4445.jpg");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
