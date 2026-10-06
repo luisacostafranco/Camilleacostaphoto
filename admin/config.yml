@@ -1,0 +1,88 @@
+backend:
+  name: turbo-github
+  turbo_site_id: PASTE_YOUR_DECAP_TURBO_SITE_ID_HERE
+  branch: main
+
+site_url: https://camilleacostaphoto.com
+display_url: https://camilleacostaphoto.com
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "website"
+    label: "Website"
+    files:
+      - label: "Site Content"
+        name: "site_content"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "Homepage Headline", name: "hero_title", widget: "string" }
+          - { label: "Location Line", name: "location_line", widget: "string" }
+          - { label: "Intro Text", name: "intro_text", widget: "text" }
+
+          - label: "Homepage Photos"
+            name: "homepage_photos"
+            widget: "list"
+            min: 7
+            max: 7
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false }
+
+          - label: "Session / Booking"
+            name: "session"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Session Name", name: "title", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Cal.com Booking Link", name: "cal_link", widget: "string" }
+
+          - label: "Frequently Asked Questions"
+            name: "faq"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Inquiry Email", name: "email", widget: "string" }
+
+      - label: "Portfolio"
+        name: "portfolio"
+        file: "content/portfolio.json"
+        format: "json"
+        fields:
+          - label: "Photos"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.alt}} — {{fields.category}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Description / Alt Text", name: "alt", widget: "string" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "Family", value: "family" }
+                  - { label: "Couples", value: "couples" }
+                  - { label: "Portraits", value: "portraits" }
+                  - { label: "Kids", value: "kids" }
+              - label: "Layout"
+                name: "layout"
+                widget: "select"
+                default: "normal"
+                options:
+                  - { label: "Normal", value: "normal" }
+                  - { label: "Tall", value: "tall" }
+                  - { label: "Wide", value: "wide" }
