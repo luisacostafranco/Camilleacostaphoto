@@ -31,19 +31,19 @@
       "layout": "normal"
     },
     {
-      "image": "/assets/gallery-6.jpg",
+      "image": "/assets/uploads/img_3422.jpg",
       "alt": "Children",
       "category": "kids",
+      "layout": "wide"
+    },
+    {
+      "image": "/assets/uploads/img_4109.jpg",
+      "alt": "Couple",
+      "category": "couples",
       "layout": "tall"
     },
     {
-      "image": "/assets/gallery-7.jpg",
-      "alt": "Couple",
-      "category": "couples",
-      "layout": "normal"
-    },
-    {
-      "image": "/assets/camille-portrait.jpg",
+      "image": "/assets/uploads/img_0195.jpg",
       "alt": "Portrait",
       "category": "portraits",
       "layout": "wide"
