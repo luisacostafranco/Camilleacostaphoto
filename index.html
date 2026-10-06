@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Camille Acosta Photography</title>
+  <meta name="description" content="Camille Acosta Photography — fun, high-quality photography in Tooele County, Utah.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="brand-header">
+    <a class="brand" href="#home">CAMILLE ACOSTA<br>PHOTOGRAPHY</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <h1>FUN &amp; HIGH-QUALITY<br>PHOTOGRAPHY</h1>
+        <p class="location">TOOELE COUNTY</p>
+      </div>
+
+      <div class="photo-collage" aria-label="Photography portfolio preview">
+        <img class="g1" src="assets/gallery-1.jpg" alt="Portrait">
+        <div class="stack s1">
+          <img src="assets/gallery-2.jpg" alt="Family portrait">
+          <img src="assets/gallery-3.jpg" alt="Children portrait">
+        </div>
+        <img class="g4" src="assets/gallery-4.jpg" alt="Outdoor family portrait">
+        <div class="stack s2">
+          <img src="assets/gallery-5.jpg" alt="Family portrait">
+          <img src="assets/gallery-6.jpg" alt="Children portrait">
+        </div>
+        <img class="g7" src="assets/gallery-7.jpg" alt="Couple portrait">
+      </div>
+
+      <p class="intro-text">
+        Hi everyone! I'm Camille, a Tooele based photographer. I'm a mom, BYU graduate,
+        powerlifter, and lover of photography. Available for family, couples, maternity,
+        newborn, seniors sessions, etc! I offer sessions at about half the going rate
+        because I need to grow my portfolio.
+      </p>
+    </section>
+
+    <section class="booking-section" id="book">
+      <div class="booking-wrap">
+        <img class="portrait" src="assets/camille-portrait.jpg" alt="Camille holding a camera">
+        <div class="booking-panel">
+          <div class="session-card">
+            <h2>$150 PHOTOGRAPHY SESSION</h2>
+            <div class="meta">
+              <span>◷&nbsp; 1 hour</span>
+              <span>⌖&nbsp; Tooele, UT 84074, USA</span>
+            </div>
+            <p>Up to 60 minute session: Families, couples, maternity, newborn, you name it!</p>
+          </div>
+
+          <div class="calendar-card">
+            <div class="calendar-head">
+              <span>OCTOBER 2026</span>
+              <div class="arrows">← &nbsp;&nbsp; →</div>
+              <span>WEDNESDAY, OCTOBER 7</span>
+            </div>
+            <div class="calendar-body">
+              <div class="calendar">
+                <div class="weekday-row">
+                  <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+                </div>
+                <div class="days" id="calendarDays"></div>
+              </div>
+              <div class="times">
+                <label>PM</label>
+                <div class="time-buttons">
+                  <button type="button">05:00 PM</button>
+                  <button type="button">06:00 PM</button>
+                </div>
+              </div>
+            </div>
+            <p class="request">Need different time? <a href="#contact">Submit a request</a></p>
+            <button class="continue" type="button">CONTINUE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <details open>
+          <summary>WHAT SHOULD I WEAR?</summary>
+          <p>Think coordinate, don't match! Chose a neutral color scheme and include different layers; for example, someone in denim, someone in cotton, someone in a dress, someone in shorts. Avoid loud patterns-featuring one person in a soft pattern is great! The last thing you want are matching white t-shirts.</p>
+        </details>
+        <details>
+          <summary>HOW MANY PHOTOS WILL I RECEIVE?</summary>
+          <p>For a full session, expect a curated gallery of professionally edited images. The exact number varies based on the session and how much variety we capture.</p>
+        </details>
+        <details>
+          <summary>HOW LONG DOES IT TAKE TO GET OUR PHOTOS?</summary>
+          <p>Typical turnaround is approximately two to three weeks. If anything changes, you'll receive an update.</p>
+        </details>
+        <details>
+          <summary>CAN YOU RECOMMEND ANY GOOD LOCATIONS?</summary>
+          <p>Absolutely. I can recommend Tooele-area locations based on your preferred look, season, lighting, and how far you'd like to travel.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-card">
+        <h2>Get in touch</h2>
+        <form action="mailto:hello@camilleacostaphoto.com" method="post" enctype="text/plain">
+          <label>NAME *</label>
+          <input name="name" required>
+          <label>EMAIL ADDRESS *</label>
+          <input type="email" name="email" required>
+          <label>MESSAGE *</label>
+          <textarea name="message" rows="5" required></textarea>
+          <button type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Camille Acosta Photography</span>
+    <div class="socials"><a href="#">f</a><a href="#">◎</a></div>
+    <a class="top" href="#home">↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
