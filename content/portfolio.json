@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "image": "/assets/gallery-4.jpg",
+      "alt": "Family",
+      "category": "family",
+      "layout": "tall"
+    },
+    {
+      "image": "/assets/gallery-1.jpg",
+      "alt": "Portrait",
+      "category": "portraits",
+      "layout": "normal"
+    },
+    {
+      "image": "/assets/gallery-2.jpg",
+      "alt": "Family",
+      "category": "family",
+      "layout": "wide"
+    },
+    {
+      "image": "/assets/gallery-3.jpg",
+      "alt": "Children",
+      "category": "kids",
+      "layout": "normal"
+    },
+    {
+      "image": "/assets/gallery-5.jpg",
+      "alt": "Family",
+      "category": "family",
+      "layout": "normal"
+    },
+    {
+      "image": "/assets/gallery-6.jpg",
+      "alt": "Children",
+      "category": "kids",
+      "layout": "tall"
+    },
+    {
+      "image": "/assets/gallery-7.jpg",
+      "alt": "Couple",
+      "category": "couples",
+      "layout": "normal"
+    },
+    {
+      "image": "/assets/camille-portrait.jpg",
+      "alt": "Portrait",
+      "category": "portraits",
+      "layout": "wide"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "hero_title": "FUN & HIGH-QUALITY PHOTOGRAPHY",
+  "location_line": "TOOELE & SALT LAKE COUNTIES",
+  "intro_text": "Hi everyone! I'm Camille, a Tooele based photographer. I'm a mom, BYU graduate, powerlifter, and lover of photography. Available for family, couples, maternity, newborn, seniors sessions, etc! I offer sessions at about half the going rate because I need to grow my portfolio.",
+  "homepage_photos": [
+    {
+      "image": "/assets/gallery-1.jpg",
+      "alt": "Portrait photography"
+    },
+    {
+      "image": "/assets/gallery-2.jpg",
+      "alt": "Family photography"
+    },
+    {
+      "image": "/assets/gallery-3.jpg",
+      "alt": "Children photography"
+    },
+    {
+      "image": "/assets/gallery-4.jpg",
+      "alt": "Outdoor family photography"
+    },
+    {
+      "image": "/assets/gallery-5.jpg",
+      "alt": "Family photography"
+    },
+    {
+      "image": "/assets/gallery-6.jpg",
+      "alt": "Children photography"
+    },
+    {
+      "image": "/assets/gallery-7.jpg",
+      "alt": "Couples photography"
+    }
+  ],
+  "session": {
+    "title": "Photography Session",
+    "price": "$150",
+    "duration": "30 minutes",
+    "location": "Tooele, Utah",
+    "description": "Families, couples, maternity, newborns, seniors, and portraits.",
+    "cal_link": "https://cal.com/camille-acosta-photography/30min"
+  },
+  "faq": [
+    {
+      "question": "WHAT SHOULD I WEAR?",
+      "answer": "Think coordinate, don't match! Choose a neutral color scheme and include different layers. Avoid loud patterns; one soft pattern is great."
+    },
+    {
+      "question": "HOW MANY PHOTOS WILL I RECEIVE?",
+      "answer": "About 50 photos, sometimes more!"
+    },
+    {
+      "question": "HOW LONG DOES IT TAKE TO GET OUR PHOTOS?",
+      "answer": "I should have them back to you within 2 weeks!"
+    },
+    {
+      "question": "CAN YOU RECOMMEND ANY GOOD LOCATIONS?",
+      "answer": "Absolutely. I have plenty of suggestions for the Tooele County area and can help you choose a location that fits the look you want."
+    }
+  ],
+  "contact": {
+    "email": "hello@camilleacostaphoto.com"
+  }
+}
