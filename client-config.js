@@ -1,1 +1,1 @@
-window.CLIENT_PORTAL_CONFIG={supabaseUrl:"PASTE_SUPABASE_PROJECT_URL_HERE",supabaseAnonKey:"PASTE_SUPABASE_ANON_KEY_HERE"};
+window.CLIENT_PORTAL_CONFIG={supabaseUrl:"https://qcnklmpoehtwyxtdbwxs.supabase.co",supabaseAnonKey:"sb_publishable_CGvXq8y7HlaI800JUg9nrA_S5VzdN3U"};
