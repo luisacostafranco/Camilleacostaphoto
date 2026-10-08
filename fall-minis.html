@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Fall Mini Sessions with Camille Acosta Photography in Tooele, Utah. Limited seasonal portrait sessions.">
+  <title>Fall Mini Sessions | Camille Acosta Photography</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="minis.css">
+  <link rel="stylesheet" href="camille-navigation.css">
+</head>
+<body>
+  <header class="mini-header">
+    <a href="index.html" class="mini-brand">CAMILLE ACOSTA <span>PHOTOGRAPHY</span></a>
+    <a href="index.html" class="mini-back">← BACK TO WEBSITE</a>
+  </header>
+  <main>
+    <section class="mini-hero">
+      <div class="mini-art" id="miniCoverBlock" aria-label="Fall session photograph">
+        <div class="mini-art-inner" id="miniArtInner">
+          <span class="mini-art-top">A LITTLE MOMENT IN TIME</span>
+          <span class="mini-art-symbol">✳</span>
+          <span class="mini-art-bottom">AUTUMN · CAMILLE ACOSTA</span>
+        </div>
+      </div>
+      <div class="mini-hero-copy">
+        <p class="mini-eyebrow">LIMITED SEASONAL PHOTOGRAPHY EVENT</p>
+        <h1 id="miniTitle">Fall Mini Sessions</h1>
+        <p class="mini-place" id="miniDateLocation">Tooele, Utah · Details coming soon</p>
+        <div class="mini-rule"></div>
+        <p class="mini-description" id="miniDescription">A short, relaxed fall photography experience full of beautiful light and memories.</p>
+        <div class="mini-metrics">
+          <div><strong id="miniPrice">$75</strong><small>PER SESSION</small></div>
+          <div><strong id="miniLength">20 min</strong><small>SESSION LENGTH</small></div>
+          <div><strong id="miniSpots">8</strong><small>PLANNED SLOTS*</small></div>
+        </div>
+        <p id="miniIncludes" class="mini-includes">Includes 5–10 edited images</p>
+        <a id="miniBookJump" class="mini-button" href="#reserve">VIEW BOOKING DETAILS ↓</a>
+        <p class="mini-disclaimer">*Planned capacity, not live availability. The live calendar below is managed by Cal.com.</p>
+      </div>
+    </section>
+
+    <section class="mini-reserve" id="reserve">
+      <p class="mini-eyebrow">SAVE YOUR SPOT</p>
+      <h2>Your fall portraits, made simple.</h2>
+      <p class="mini-reserve-copy">Choose a time below when bookings open. Your final booking time is confirmed through Cal.com.</p>
+      <div id="miniState" class="mini-state" role="status">Loading event details…</div>
+      <div id="miniCalendarArea" hidden>
+        <iframe id="miniCalendar" title="Book fall mini session with Camille Acosta Photography" loading="lazy"></iframe>
+        <p class="mini-fallback">Trouble with the calendar? <a id="miniCalLink" href="#" target="_blank" rel="noopener noreferrer">Open booking in Cal.com ↗</a></p>
+      </div>
+    </section>
+
+    <section class="mini-bottom">
+      <p>Have a question about mini sessions?</p>
+      <a href="booking.html#contact">GET IN TOUCH ↗</a>
+    </section>
+  </main>
+  <footer class="mini-footer"><span>CAMILLE ACOSTA PHOTOGRAPHY</span><span>TOOELE, UTAH</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="client-config.js"></script>
+  <script src="minis.js"></script>
+  <script src="camille-navigation.js" defer></script>
+</body>
+</html>
