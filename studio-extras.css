@@ -1,0 +1,22 @@
+/* Studio: email status, guide editor, responsive action layout */
+.studio-page [hidden]{display:none!important}
+.studio-page button:disabled{opacity:.52;cursor:not-allowed!important}
+.studio-top-actions{flex-wrap:wrap;justify-content:flex-end}
+.studio-page .location-editor{max-width:1050px}
+.location-editor .location-editor-section-heading{display:flex;align-items:center;justify-content:space-between;gap:22px;margin:36px 0 20px;border-top:1px solid #d6cec2;padding-top:28px}
+.location-editor-section-heading h2{font-size:34px;font-weight:400;margin:0 0 8px}
+.location-editor-section-heading p{margin:0;max-width:620px}
+.location-spots-editor{display:grid;gap:18px}
+.location-edit-card{padding:28px;background:#f2efe8;border:1px solid #d5cec3}
+.location-card-top{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:21px}
+.location-card-top h3{font:normal 30px 'Cormorant Garamond',Georgia,serif;margin:0}
+.location-order-buttons{display:flex;gap:6px;flex-wrap:wrap}
+.location-order-buttons button{min-height:32px;padding:8px 12px;border:1px solid #a69e93;background:transparent;color:#5d5a54;font:9px Montserrat,sans-serif;letter-spacing:.08em;cursor:pointer}
+.location-order-buttons [data-remove]{border-color:#b7a396}
+.location-editor .editor-grid textarea{background:#fbf8f2}
+.location-editor .editor-grid input:not([type=checkbox]){font-size:17px}
+.location-editor #locationGuideMessage{margin:20px 0 0;font:15px/1.6 Montserrat,sans-serif;color:#5d5a54}
+.studio-record-notes>div:last-child{grid-column:auto}
+.studio-record-notes{grid-template-columns:1fr 1fr}
+@media(max-width:720px){.location-editor .location-editor-section-heading{align-items:flex-start;flex-direction:column}.location-edit-card{padding:17px}.location-card-top{align-items:flex-start}.location-order-buttons{max-width:180px;justify-content:flex-end}.studio-top-actions{justify-content:flex-start}}
+@media(max-width:520px){.location-card-top{flex-direction:column}.location-order-buttons{max-width:100%;justify-content:flex-start}.studio-record-notes{grid-template-columns:1fr}}

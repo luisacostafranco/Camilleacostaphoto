@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Favorite photography session locations from Camille Acosta Photography in Utah.">
+  <title>Location Inspiration | Camille Acosta Photography</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="location-guide.css">
+</head>
+<body>
+  <header class="guide-header">
+    <a class="guide-brand" href="index.html">CAMILLE ACOSTA <span>PHOTOGRAPHY</span></a>
+    <a class="guide-back" href="index.html">BACK TO WEBSITE &#8599;</a>
+  </header>
+
+  <main>
+    <div id="guideDraft" class="guide-draft" role="status">
+      <p class="guide-eyebrow">CAMILLE ACOSTA PHOTOGRAPHY</p>
+      <h1>Somewhere beautiful.</h1>
+      <p>Camille's location inspiration guide is coming soon. In the meantime, she'll help you choose the right place for your photos.</p>
+      <a class="guide-button" href="booking.html">BOOK A SESSION</a>
+    </div>
+
+    <div id="guideContent" hidden>
+      <div id="guidePreviewBadge" class="guide-preview-badge" hidden>STUDIO PREVIEW — NOT PUBLISHED</div>
+      <section class="guide-hero">
+        <div class="guide-hero-photo" id="guideHeroPhoto" aria-hidden="true">
+          <div class="guide-photo-label">A PLACE FOR YOUR STORY</div>
+        </div>
+        <div class="guide-hero-text">
+          <p class="guide-eyebrow">LOCATION INSPIRATION</p>
+          <h1 id="guideTitle">Places we love.</h1>
+          <p id="guideSubtitle" class="guide-subtitle">A little inspiration for your session.</p>
+          <div class="guide-rule"></div>
+          <p id="guideIntroduction" class="guide-intro"></p>
+          <a class="guide-text-link" href="#spots">EXPLORE THE LOCATIONS &#8595;</a>
+        </div>
+      </section>
+
+      <section id="spots" class="guide-spots-section">
+        <div class="guide-section-heading">
+          <p class="guide-eyebrow">DISCOVER</p>
+          <h2>Find your kind of beautiful.</h2>
+          <p>Every session is different. These are a few starting points Camille loves.</p>
+        </div>
+        <div id="guideSpots" class="guide-spots"></div>
+      </section>
+      <section class="guide-tip-section">
+        <p class="guide-eyebrow">FROM CAMILLE</p>
+        <h2>Good light. Beautiful moments.</h2>
+        <p id="guidePlanningTip"></p>
+        <a class="guide-button" href="booking.html">PLAN YOUR SESSION</a>
+      </section>
+    </div>
+  </main>
+  <footer class="guide-footer"><span>CAMILLE ACOSTA PHOTOGRAPHY</span><span>TOOELE, UTAH</span></footer>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="client-config.js"></script>
+  <script src="location-guide.js"></script>
+</body>
+</html>

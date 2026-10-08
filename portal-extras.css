@@ -1,0 +1,6 @@
+/* Camille client portal: universal downloadable calendar invitation */
+.client-page .calendar-download-button{display:inline-flex;align-items:center;justify-content:center;margin-top:19px;padding:14px 18px;min-height:43px;border:1px solid #777066;background:transparent;color:#5d5a54;cursor:pointer;font:9px Montserrat,sans-serif;letter-spacing:.14em}
+.client-page .calendar-download-button:hover,.client-page .calendar-download-button:focus-visible{background:#5d5a54;color:#fff}
+.client-page .calendar-hint{font:12px/1.55 Montserrat,sans-serif;color:#797269;margin:9px 0 0}
+.client-page [hidden],.client-page .calendar-download-button[hidden]{display:none!important}
+@media(max-width:600px){.client-page .calendar-download-button{width:100%;min-height:50px}}
