@@ -488,7 +488,7 @@ async function queueWelcome(client,button){
   }else{
     alert(data?.status==="sent"?"This client's welcome email was already sent.":
       data?.status==="failed"?"A previous email attempt failed. See client email status in Studio Admin.":
-      "Welcome email queued. It should be processed at the next 5-minute email run.");
+      "Welcome email queued for immediate sending. Check email status shortly.");
     await loadData();
   }
 }
