@@ -1,0 +1,31 @@
+/* Portal workflow and optional questionnaire — Camille Acosta Photography */
+.portal-workflow {margin:0 0 28px;background:#f8f5ef;border:1px solid #cbc7be;padding:30px 34px}
+.workflow-heading {display:flex;justify-content:space-between;align-items:flex-start;gap:25px;margin-bottom:22px}
+.workflow-heading h2 {font:normal clamp(30px,4vw,42px) 'Cormorant Garamond',serif;margin:5px 0}
+.workflow-count {font:10px Montserrat,sans-serif;letter-spacing:.09em;color:#77716b}
+.workflow-progress {height:4px;background:#dfdad1;margin:0 0 25px;overflow:hidden}
+.workflow-progress span {display:block;background:#746d61;height:100%;transition:width .2s ease}
+.workflow-steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.workflow-step {border-top:1px solid #d6d0c7;padding-top:14px;display:flex;gap:12px;align-items:flex-start;min-width:0}
+.workflow-icon {flex:0 0 29px;height:29px;border:1px solid #b4aea4;border-radius:50%;display:grid;place-items:center;font:11px Montserrat,sans-serif;color:#736c62}
+.workflow-icon.done {background:#70695f;color:#fff;border-color:#70695f}
+.workflow-copy strong {display:block;font:10px Montserrat,sans-serif;letter-spacing:.05em;margin:4px 0 6px}
+.workflow-copy p {font-size:13px;line-height:1.55;margin:0;color:#766f66}
+.workflow-copy button,.workflow-copy a {border:0;background:none;color:#655e54;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:6px 0 0;font:9px Montserrat,sans-serif;letter-spacing:.06em}
+.workflow-optional {font:8px Montserrat,sans-serif;letter-spacing:.1em;color:#898076;margin-left:7px}
+.workflow-step.waiting .workflow-icon {background:#e8e0d1}
+.questionnaire-view {max-width:850px;margin:0 auto}
+.questionnaire-paper {background:#f8f5ef;border:1px solid #cbc7be;padding:48px;margin-top:20px}
+.questionnaire-paper h1 {font-weight:400;font-size:clamp(39px,6vw,60px);line-height:1;margin:8px 0 10px}
+.questionnaire-paper .intro {font-size:17px;line-height:1.6;margin-bottom:28px;color:#746e65}
+.questionnaire-form {display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.questionnaire-form label {display:block;font:9px Montserrat,sans-serif;letter-spacing:.08em}
+.questionnaire-form .q-wide {grid-column:1/-1}
+.questionnaire-form input,.questionnaire-form select,.questionnaire-form textarea {display:block;width:100%;margin-top:9px;padding:13px;background:#f2efe8;border:1px solid #c9c3b9;color:#55524d;font:16px 'Cormorant Garamond',serif;border-radius:0;min-height:47px}
+.questionnaire-form textarea {min-height:95px;resize:vertical}
+.questionnaire-actions {grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.questionnaire-actions .portal-button {margin:0}
+.questionnaire-actions .quiet-button {margin:0;padding:15px;cursor:pointer}
+.questionnaire-label {font:9px Montserrat,sans-serif;letter-spacing:.13em;color:#7f796f;text-transform:uppercase}
+@media(max-width:850px){.workflow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.portal-workflow{padding:24px 18px}.workflow-steps{grid-template-columns:1fr;gap:13px}.workflow-step{padding-top:12px}.workflow-heading{flex-direction:column;gap:4px}.questionnaire-paper{padding:24px 17px}.questionnaire-form{grid-template-columns:1fr}.questionnaire-form .q-wide{grid-column:auto}.questionnaire-actions{grid-column:auto;flex-direction:column;align-items:stretch}.questionnaire-actions .portal-button{width:100%}}

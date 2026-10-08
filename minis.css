@@ -1,0 +1,26 @@
+:root{--cream:#f2efe8;--paper:#fbf8f2;--ink:#625d54;--line:#c9c2b7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:17px 'Cormorant Garamond',Georgia,serif}a{color:inherit}
+.mini-header{min-height:98px;padding:19px clamp(24px,4vw,70px);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}
+.mini-brand{text-decoration:none;font:12px Montserrat,sans-serif;letter-spacing:.16em;text-align:center;line-height:1.4}
+.mini-brand span{display:block;font-size:9px;letter-spacing:.25em}
+.mini-back,.mini-eyebrow,.mini-footer,.mini-metrics small,.mini-button,.mini-bottom a{font:9px Montserrat,sans-serif;letter-spacing:.17em;text-decoration:none}
+.mini-back{border-bottom:1px solid var(--line);padding:8px}
+.mini-hero{width:min(1280px,92vw);margin:0 auto;padding:65px 0 90px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:clamp(30px,6vw,95px)}
+.mini-art{width:100%;aspect-ratio:4/5;background:linear-gradient(145deg,#c2ac88 0%,#8c7657 42%,#514a3b 100%);padding:20px;overflow:hidden;position:relative}
+.mini-art:after{content:'';pointer-events:none;position:absolute;inset:0;background:radial-gradient(ellipse at 40% 35%,rgba(255,224,163,.4),transparent 55%),linear-gradient(40deg,rgba(40,40,30,.23),transparent)}
+.mini-art.has-cover{background-position:center center;background-size:cover}
+.mini-art-inner{position:relative;z-index:1;height:100%;border:1px solid rgba(250,244,229,.65);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:22px;color:#fff9ed}
+.mini-art.has-cover .mini-art-inner{background:rgba(45,39,29,.08)}
+.mini-art-top,.mini-art-bottom{font:9px Montserrat,sans-serif;letter-spacing:.22em;text-align:center}
+.mini-art-symbol{font:190px 'Cormorant Garamond',serif;font-weight:400;line-height:1}
+.mini-art.has-cover .mini-art-symbol{visibility:hidden}
+.mini-hero-copy{max-width:550px}.mini-eyebrow{color:#857966;margin:0 0 24px}
+h1,h2{font-weight:400;letter-spacing:-.02em}h1{font-size:clamp(65px,8vw,118px);line-height:.83;margin:0 0 32px}h2{font-size:clamp(42px,5vw,69px);line-height:.98;margin:10px 0 21px}
+.mini-place{font-size:21px;margin:0 0 25px}.mini-rule{height:1px;background:var(--line);margin:27px 0}.mini-description{font-size:23px;line-height:1.4;margin:0 0 36px}
+.mini-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:25px}.mini-metrics div{border-right:1px solid var(--line);text-align:center;padding:2px 8px}.mini-metrics div:last-child{border:0}.mini-metrics strong{display:block;font-weight:400;font-size:43px;line-height:1.2}.mini-metrics small{display:block;line-height:1.6;font-size:8px}
+.mini-includes{font-size:18px;margin:0 0 20px}.mini-button{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;min-height:53px;padding:15px 25px;margin:10px 0 0}.mini-disclaimer{font:11px Montserrat,sans-serif;line-height:1.6;margin-top:20px;color:#918779}
+.mini-reserve{background:var(--paper);padding:80px clamp(18px,4vw,70px);text-align:center}.mini-reserve-copy{font-size:20px;max-width:630px;margin:0 auto 32px;line-height:1.45}.mini-state{max-width:780px;margin:0 auto;border:1px solid var(--line);padding:28px 30px;font-size:22px;line-height:1.4}
+#miniCalendarArea{max-width:1040px;margin:0 auto}#miniCalendar{width:100%;height:740px;border:0;display:block;background:#fff}.mini-fallback{font-size:17px}
+.mini-bottom{text-align:center;padding:75px 20px 85px}.mini-bottom p{font-size:24px;margin:0 0 15px}.mini-bottom a{display:inline-block;border-bottom:1px solid var(--line);padding:10px}
+.mini-footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:25px clamp(20px,4vw,65px);gap:15px}
+@media(max-width:760px){.mini-header{min-height:77px;padding:15px}.mini-back{font-size:8px}.mini-hero{grid-template-columns:1fr;width:min(600px,91vw);padding:30px 0 65px;gap:35px}.mini-art{aspect-ratio:5/4}.mini-art-symbol{font-size:130px}.mini-art-top,.mini-art-bottom{font-size:8px}.mini-hero-copy{max-width:100%}h1{font-size:clamp(62px,15vw,93px)}.mini-metrics strong{font-size:36px}.mini-reserve{padding:65px 17px}.mini-state{font-size:19px;padding:23px 20px}#miniCalendar{height:690px}.mini-footer{font-size:8px;flex-direction:column;text-align:center;gap:8px}}
