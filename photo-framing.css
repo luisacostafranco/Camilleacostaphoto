@@ -1,0 +1,25 @@
+/* The CMS keeps full image URLs. Only the in-frame visual presentation changes.
+   Object-position and transform-origin use the same percentages so dragging
+   the preview matches the live cover + zoom geometry at both breakpoints. */
+.simple-home .pixie-photo img.camille-framed-image,
+.gallery-item img.camille-framed-image {
+  object-fit: cover !important;
+  object-position: var(--camille-desktop-x, 50%) var(--camille-desktop-y, 50%) !important;
+  transform-origin: var(--camille-desktop-x, 50%) var(--camille-desktop-y, 50%) !important;
+  transform: scale(var(--camille-desktop-zoom, 1)) !important;
+}
+/* Prevent the hover animation from overriding a carefully chosen crop. */
+.simple-home .pixie-photo:hover img.camille-framed-image,
+.gallery-item:hover img.camille-framed-image {
+  transform: scale(var(--camille-desktop-zoom, 1)) !important;
+}
+@media (max-width: 760px) {
+  .simple-home .pixie-photo img.camille-framed-image,
+  .gallery-item img.camille-framed-image,
+  .simple-home .pixie-photo:hover img.camille-framed-image,
+  .gallery-item:hover img.camille-framed-image {
+    object-position: var(--camille-mobile-x, 50%) var(--camille-mobile-y, 50%) !important;
+    transform-origin: var(--camille-mobile-x, 50%) var(--camille-mobile-y, 50%) !important;
+    transform: scale(var(--camille-mobile-zoom, 1)) !important;
+  }
+}
