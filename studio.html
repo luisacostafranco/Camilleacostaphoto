@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f2efe8">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Studio Admin | Camille Acosta Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site-v2.css">
+  <link rel="stylesheet" href="studio.css">
+  <link rel="stylesheet" href="studio-extras.css">
+  <style>.photo-manager-launch{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;white-space:nowrap}.studio-top-actions .photo-manager-launch{padding:0 17px}</style>
+  <link rel="stylesheet" href="workflow.css">
+  <link rel="stylesheet" href="camille-navigation.css">
+</head>
+<body class="studio-page">
+<header class="studio-header">
+  <a href="index.html" class="studio-brand">CAMILLE ACOSTA<br><small>PHOTOGRAPHY</small></a>
+  <span>STUDIO ADMIN</span>
+</header>
+
+<main class="studio-shell">
+  <section id="studioLogin" class="studio-login">
+    <p class="eyebrow">Private Studio</p>
+    <h1>Client management, without Supabase.</h1>
+    <p>Camille signs in by email magic link. Only approved studio-admin emails can access this page.</p>
+    <form id="studioLoginForm">
+      <label>EMAIL ADDRESS</label>
+      <input id="studioEmail" type="email" required autocomplete="email">
+      <button type="submit">SEND ADMIN SIGN-IN LINK</button>
+    </form>
+    <p id="studioLoginMessage"></p>
+  </section>
+
+  <section id="studioUnauthorized" class="studio-login" hidden>
+    <p class="eyebrow">Private Studio</p>
+    <h1>Not authorized.</h1>
+    <p>This email is authenticated but is not on the Studio Admin list.</p>
+    <button id="unauthorizedSignOut">SIGN OUT</button>
+  </section>
+
+  <section id="studioDashboard" hidden>
+    <div class="studio-topbar">
+      <div>
+        <p class="eyebrow">Studio Admin</p>
+        <h1>Clients</h1>
+      </div>
+      <div class="studio-top-actions">
+        <button id="newClientButton" class="studio-primary">+ ADD CLIENT</button>
+        <button id="fallMinisButton" class="studio-secondary" type="button">FALL MINI SESSIONS</button>
+        <a href="website-editor.html" class="studio-secondary photo-manager-launch" title="Edit website text, FAQs, booking details and categories">WEBSITE EDITOR</a>
+        <a href="photo-manager.html" class="studio-secondary photo-manager-launch" title="Adjust how photos are framed on desktop and mobile">WEBSITE PHOTOS</a>
+        <button id="locationsButton" class="studio-secondary" type="button">LOCATION GUIDE</button>
+        <button id="studioSignOut" class="studio-quiet">SIGN OUT</button>
+      </div>
+    </div>
+
+    <div class="studio-status-row">
+      <div><strong id="clientCount">0</strong><span>Total clients</span></div>
+      <div><strong id="pendingCount">0</strong><span>Contracts pending</span></div>
+      <div><strong id="galleryCount">0</strong><span>Galleries ready</span></div>
+      <div><strong id="paymentCount">0</strong><span>Awaiting payment confirmation</span></div>
+    </div>
+
+    <div id="clientList" class="studio-client-list"></div>
+  </section>
+
+  <section id="clientEditor" class="studio-editor" hidden>
+    <div class="editor-heading">
+      <div><p class="eyebrow">Client Record</p><h1 id="editorTitle">Add Client</h1></div>
+      <button id="closeEditor" class="studio-quiet">CLOSE</button>
+    </div>
+    <form id="clientEditorForm">
+      <input id="editingClientId" type="hidden">
+
+      <div class="editor-grid">
+        <label>CLIENT NAME *<input id="editName" required></label>
+        <label>CLIENT EMAIL *<input id="editEmail" type="email" required></label>
+        <label>SESSION TYPE<input id="editType" value="Photography Session"></label>
+        <label>SESSION DATE<input id="editDate" type="date"></label>
+        <label>SESSION TIME<input id="editTime" placeholder="5:00 PM"></label>
+        <label>SESSION LENGTH (MINUTES)<input id="editDuration" type="number" min="10" max="600" step="5" value="60" required></label>
+        <label>LOCATION<input id="editLocation" value="Tooele, Utah"></label>
+        <label>STANDARD SESSION FEE ($)<input id="editFee" type="number" min="0" max="1000000" step="0.01" value="150.00" required></label>
+        <label>REFERRED BY (OPTIONAL)<input id="editReferredBy" maxlength="160" placeholder="Name or email of person who referred them"></label>
+        <label class="editor-wide studio-checkbox-label"><input id="editReferralDiscount" type="checkbox"> Apply 10% referral thank-you discount to this session</label>
+        <p id="calculatedFee" class="editor-wide studio-fee-preview">Final session fee: $150.00</p>
+        <p id="signedFeeNotice" class="editor-wide studio-locked-note" hidden>This client has signed their contract. Price and referral discount are locked to protect the agreement.</p>
+        <label class="editor-wide studio-checkbox-label"><input id="editReminderEnabled" type="checkbox" checked> Send one reminder email the day before this session</label>
+        <p class="editor-wide studio-help">Transactional reminder, sent around the morning before the session once the scheduled email service is activated.</p>
+        <label class="editor-wide">GOOGLE PHOTOS GALLERY URL<input id="editGallery" type="url" placeholder="https://photos.app.goo.gl/..."></label>
+        <p class="editor-wide studio-help">Adding a new gallery link automatically queues a branded gallery-ready email. The client is notified after the server-side email service processes the queue.</p>
+        <label id="newClientWelcomeRow" class="editor-wide studio-checkbox-label"><input id="editSendWelcome" type="checkbox"> Email this client their welcome message after saving</label>
+      </div>
+
+      <div class="editor-actions">
+        <button type="submit" class="studio-primary">SAVE CLIENT</button>
+        <button type="button" id="sendInviteFromEditor" class="studio-secondary">SEND BRANDED WELCOME EMAIL</button>
+      </div>
+      <p id="editorMessage"></p>
+    </form>
+  </section>
+  <section id="miniEditor" class="studio-editor" hidden>
+    <div class="editor-heading">
+      <div><p class="eyebrow">Seasonal Event</p><h1>Fall Mini Sessions</h1></div>
+      <button id="closeMiniEditor" class="studio-quiet" type="button">CLOSE</button>
+    </div>
+    <form id="miniEditorForm">
+      <p class="studio-help">This page is available only at its direct URL. Keep it in draft until the Cal.com mini-session booking link is ready.</p>
+      <div class="editor-grid">
+        <label>EVENT TITLE<input id="miniTitle" required maxlength="140"></label>
+        <label>EVENT DATE<input id="miniDate" type="date" required></label>
+        <label>LOCATION<input id="miniLocation" maxlength="200"></label>
+        <label>PRICE ($)<input id="miniPrice" type="number" min="0" step="0.01" required></label>
+        <label>SESSION LENGTH (MINUTES)<input id="miniDuration" type="number" min="10" max="180" required></label>
+        <label>PLANNED NUMBER OF SLOTS<input id="miniSpots" type="number" min="1" max="100"></label>
+        <label class="editor-wide">WHAT'S INCLUDED<input id="miniIncludes" maxlength="200" placeholder="5–10 edited images"></label>
+        <label class="editor-wide">EVENT DESCRIPTION<textarea id="miniDescription" rows="3" maxlength="1200"></textarea></label>
+        <label class="editor-wide">COVER IMAGE URL<input id="miniCover" maxlength="500" placeholder="/assets/your-photo.jpg or https://..."></label>
+        <label class="editor-wide">DEDICATED CAL.COM MINI EVENT LINK<input id="miniCalUrl" maxlength="500" placeholder="https://cal.com/camille-acosta-photography/fall-minis"></label>
+        <label class="editor-wide studio-checkbox-label"><input id="miniActive" type="checkbox"> Activate live mini-session booking</label>
+      </div>
+      <p class="studio-help">Booking availability is provided by Cal.com directly, not by a manually maintained list. Create a separate Cal.com mini-session event type with the correct session duration, event date, and capacity.</p>
+      <div class="editor-actions">
+        <button class="studio-primary" type="submit" id="saveMiniButton">SAVE FALL MINI EVENT</button>
+        <a class="studio-secondary studio-link-button" href="fall-minis.html" target="_blank" rel="noopener">PREVIEW EVENT PAGE ↗</a>
+      </div>
+      <p id="miniMessage" role="status"></p>
+    </form>
+  </section>
+
+  <section id="locationEditor" class="studio-editor location-editor" hidden>
+    <div class="editor-heading">
+      <div><p class="eyebrow">Private draft / Direct link</p><h1>Location Inspiration</h1></div>
+      <button id="closeLocationEditor" type="button" class="studio-quiet">CLOSE</button>
+    </div>
+    <form id="locationGuideForm">
+      <p class="studio-help">Edit this guide here, preview it while signed in, then publish when ready. It is never added to the main navigation automatically.</p>
+      <div class="editor-grid">
+        <label>GUIDE TITLE<input id="guideTitle" maxlength="120" required placeholder="Places we love"></label>
+        <label>SMALL SUBTITLE<input id="guideSubtitle" maxlength="180" placeholder="A little inspiration for your session"></label>
+        <label class="editor-wide">INTRODUCTION<textarea id="guideIntro" rows="3" maxlength="1600"></textarea></label>
+        <label class="editor-wide">YOUR PLANNING TIP<textarea id="guideTip" rows="2" maxlength="800" placeholder="The location and timing are always confirmed with Camille."></textarea></label>
+        <label class="editor-wide">OPTIONAL HEADER PHOTO URL<input id="guideHero" maxlength="900" placeholder="/assets/uploads/location-cover.webp or https://..."></label>
+        <label class="editor-wide studio-checkbox-label"><input id="guidePublished" type="checkbox"> Publish guide details to anyone who has the exact link</label>
+      </div>
+      <div class="location-editor-section-heading">
+        <div><h2>Favorite locations</h2><p class="studio-help">Each spot can have its own photograph, description, best lighting, and map link. Dragging isn't required; use Up and Down to set the order.</p></div>
+        <button type="button" id="addLocationButton" class="studio-secondary">+ ADD LOCATION</button>
+      </div>
+      <div id="locationSpotsList" class="location-spots-editor"></div>
+      <div class="editor-actions">
+        <button type="submit" id="saveLocationButton" class="studio-primary">SAVE LOCATION GUIDE</button>
+        <a id="previewLocationGuide" href="location-guide.html?preview=1" class="studio-secondary studio-link-button" target="_blank" rel="noopener">PREVIEW GUIDE ↗</a>
+      </div>
+      <p id="locationGuideMessage" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+<script src="client-config.js"></script>
+<script src="contract-utils.js"></script>
+<script src="workflow-utils.js"></script>
+<script src="studio.js"></script>
+  <script src="camille-navigation.js" defer></script>
+</body>
+</html>

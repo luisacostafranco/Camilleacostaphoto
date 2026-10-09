@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f2efe8">
+<title>Website Editor | Camille Acosta Photography</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="website-editor.css">
+</head><body>
+<header class="we-header"><a href="studio.html" class="we-brand">CAMILLE ACOSTA <small>PHOTOGRAPHY</small></a><a href="studio.html" class="we-back">← BACK TO STUDIO</a></header>
+<main class="we-shell">
+  <section id="weLoading" class="we-centered"><div class="we-spinner" aria-hidden="true"></div><p>Opening your private website editor…</p></section>
+  <section id="weLogin" class="we-centered" hidden>
+    <p class="we-eyebrow">Private Studio</p><h1>Welcome back.</h1><p>Sign in with Camille's approved Studio Admin email.</p>
+    <form id="weLoginForm"><label for="weLoginEmail">EMAIL ADDRESS</label><input id="weLoginEmail" type="email" required autocomplete="email"><button type="submit" class="we-solid">SEND SIGN-IN LINK</button></form>
+    <p id="weLoginMessage" role="status"></p>
+  </section>
+  <section id="weUnauthorized" class="we-centered" hidden><h1>Access restricted.</h1><p>Only Camille's approved Studio Admin account can edit the website.</p><button id="weSignOutDenied" class="we-outline" type="button">SIGN OUT</button></section>
+  <section id="weEditor" hidden>
+    <div class="we-intro"><div><p class="we-eyebrow">Studio Admin / Website Editor</p><h1>Make it yours.</h1><p>Update the words and portfolio categories. Preview everything privately, then publish when you're ready.</p></div><div class="we-status"><span id="weBadge">LOADING…</span><small id="wePublication"></small></div></div>
+    <div id="weImportNotice" class="we-banner" hidden><div><strong>One-time import</strong><p>Bring over Camille's current Decap text, prices and FAQs. The website remains unchanged until you publish.</p></div><button class="we-outline" id="weImportButton" type="button">IMPORT CURRENT WEBSITE</button></div>
+    <div class="we-toolbar"><div><button id="weSaveTop" class="we-outline" type="button">SAVE DRAFT</button><button id="wePublishTop" class="we-solid" type="button">PUBLISH WEBSITE TEXT</button></div><div><button id="weUndo" type="button" title="Undo your last editing action">↶ UNDO</button><button id="weReset" type="button">DISCARD UNSAVED EDITS</button></div></div>
+    <nav class="we-tabs" aria-label="Website editing sections">
+      <button type="button" class="current" data-we-tab="homepage">HOMEPAGE</button>
+      <button type="button" data-we-tab="booking">BOOKING</button>
+      <button type="button" data-we-tab="faqs">FAQ</button>
+      <button type="button" data-we-tab="contact">CONTACT</button>
+      <button type="button" data-we-tab="portfolio">PORTFOLIO</button>
+    </nav>
+    <div class="we-editor-wrap">
+      <section class="we-tab-panel" data-we-panel="homepage"><div class="we-section-heading"><p class="we-eyebrow">01 / Homepage</p><h2>The first impression</h2><p>Camille's headline, introduction, and the wording around her booking and inquiry sections.</p></div>
+        <div class="we-grid"><label class="we-wide">MAIN HEADLINE<textarea data-field="hero_title" rows="2" maxlength="180"></textarea></label>
+        <label class="we-wide">LOCATION LINE<input data-field="location_line" maxlength="160"></label>
+        <label class="we-wide">INTRODUCTION<textarea data-field="intro_text" rows="5" maxlength="2200"></textarea></label>
+        <label>HOMEPAGE BOOKING HEADING<input data-field="home.booking_heading" maxlength="160"></label>
+        <label class="we-wide">BOOKING INTRO TEXT<textarea data-field="home.booking_intro" rows="3" maxlength="1200"></textarea></label>
+        <label>CONTACT HEADING<input data-field="home.contact_heading" maxlength="160"></label>
+        <label class="we-wide">CONTACT PARAGRAPH<textarea data-field="home.contact_intro" rows="3" maxlength="1200"></textarea></label></div>
+        <a class="we-text-link" href="photo-manager.html">MANAGE HOMEPAGE PHOTOS ↗</a>
+      </section>
+      <section class="we-tab-panel" data-we-panel="booking" hidden><div class="we-section-heading"><p class="we-eyebrow">02 / Booking</p><h2>Session information</h2><p>These are the details displayed on the public homepage and booking page. Actual appointment lengths and availability must still be updated separately in Cal.com.</p></div>
+        <div class="we-grid"><label>SESSION TITLE<input data-field="session.title" maxlength="120"></label><label>DISPLAY PRICE<input data-field="session.price" maxlength="45" placeholder="$150"></label>
+        <label>DURATION TEXT<input data-field="session.duration" maxlength="55" placeholder="60 minutes"></label><label>SESSION LOCATION<input data-field="session.location" maxlength="160"></label>
+        <label class="we-wide">SESSION DESCRIPTION<textarea data-field="session.description" rows="3" maxlength="1200"></textarea></label>
+        <label class="we-wide">CAL.COM EVENT URL<input data-field="session.cal_link" type="url" maxlength="500" placeholder="https://cal.com/..."></label>
+        <label>BOOKING PAGE HEADING<input data-field="booking.heading" maxlength="160"></label>
+        <label class="we-wide">BOOKING PAGE INTRO<textarea data-field="booking.intro" rows="3" maxlength="1200"></textarea></label>
+        <label>BOOKING CONTACT HEADING<input data-field="booking.contact_heading" maxlength="160"></label>
+        <label class="we-wide">BOOKING CONTACT PARAGRAPH<textarea data-field="booking.contact_intro" rows="3" maxlength="1200"></textarea></label></div>
+        <div class="we-note"><strong>Remember:</strong> This changes the words on the website. It does not change confirmed sessions, signed contract prices, or your Cal.com event duration.</div>
+      </section>
+      <section class="we-tab-panel" data-we-panel="faqs" hidden><div class="we-section-heading"><p class="we-eyebrow">03 / Questions</p><h2>Frequently asked questions</h2><p>Add, edit, rearrange or remove questions. Visitors will see them in this order.</p></div><div id="weFAQList" class="we-repeat-list"></div><button id="weFAQAdd" class="we-outline" type="button">+ ADD QUESTION</button></section>
+      <section class="we-tab-panel" data-we-panel="contact" hidden><div class="we-section-heading"><p class="we-eyebrow">04 / Contact</p><h2>Let's stay connected</h2><p>Inquiries on the public website open a pre-filled email addressed to this inbox.</p></div><div class="we-grid">
+        <label class="we-wide">CONTACT EMAIL<input type="email" data-field="contact.email" maxlength="250" required></label>
+        <label class="we-wide">INSTAGRAM PROFILE URL<input type="url" data-field="contact.instagram" maxlength="500"></label>
+      </div><p class="we-note">The contact form currently launches a visitor's email app. This setting does not turn it into an automated inbox.</p></section>
+      <section class="we-tab-panel" data-we-panel="portfolio" hidden><div class="we-section-heading"><p class="we-eyebrow">05 / Portfolio</p><h2>Categories &amp; presentation</h2><p>The published names here power the portfolio filter buttons, direct category links, and the mobile hamburger menu.</p></div>
+        <div class="we-grid"><label class="we-wide">PORTFOLIO PAGE HEADLINE<input data-field="portfolio.heading" maxlength="180"></label>
+        <label class="we-wide">PORTFOLIO INTRO<textarea data-field="portfolio.intro" rows="3" maxlength="1200"></textarea></label>
+        <label class="we-wide">BOOKING CALL-TO-ACTION HEADING<input data-field="portfolio.cta_heading" maxlength="180"></label></div>
+        <div class="we-group-top"><div><h3>Photo categories</h3><p>Rename or reorder them here; assign photographs to categories in Website Photos.</p></div><button id="weCategoryAdd" class="we-outline" type="button">+ ADD CATEGORY</button></div>
+        <div id="weCategoryList" class="we-repeat-list"></div>
+        <div class="we-note">Changing a category name keeps its link the same. Removing a category leaves its photos visible under <strong>All</strong>. Empty and hidden categories won't appear in the menu.</div>
+        <a href="photo-manager.html" class="we-text-link">OPEN PHOTO MANAGER TO ASSIGN CATEGORIES ↗</a>
+      </section>
+    </div>
+    <div class="we-bottom-bar"><p id="weMessage" role="status" aria-live="polite">Nothing changes for visitors until you publish.</p><div><button id="wePreview" class="we-outline" type="button">PREVIEW PAGE</button><button id="weSaveBottom" class="we-outline" type="button">SAVE DRAFT</button><button id="wePublishBottom" class="we-solid" type="button">PUBLISH</button></div></div>
+    <div class="we-danger"><button id="weRestore" type="button">RESTORE PREVIOUS PUBLISHED VERSION</button><button id="weDecapFallback" type="button">EMERGENCY: RETURN TO DECAP TEXT</button></div>
+    <p class="we-footnote">Website Photos continues to manage images and image framing. Website Editor manages the words and categories only. The original Decap files remain preserved during the transition.</p>
+  </section>
+</main>
+<dialog id="wePreviewDialog" class="we-preview-dialog" aria-label="Preview unpublished website"><div class="we-preview-header"><div><strong>Website draft preview</strong><small>Only you can see this draft</small></div><button id="weClosePreview" type="button" aria-label="Close preview">✕</button></div><div class="we-preview-bar"><button data-preview-page="index.html" type="button">HOMEPAGE</button><button data-preview-page="booking.html" type="button">BOOKING</button><button data-preview-page="portfolio.html" type="button">PORTFOLIO</button><button id="wePreviewPhone" type="button" aria-pressed="false">PHONE WIDTH</button></div><div id="wePreviewWrap" class="we-preview-wrap"><iframe id="wePreviewFrame" title="Your actual website with unpublished wording" src="about:blank"></iframe></div><p class="we-preview-help">You are seeing an unsaved content preview inside the actual website layout. Pictures remain managed separately in Photo Manager.</p></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="client-config.js"></script><script type="module" src="website-editor.js"></script>
+</body></html>

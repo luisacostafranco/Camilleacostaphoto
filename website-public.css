@@ -1,0 +1,11 @@
+/* Avoid a momentary flash of outdated hard-coded text before the published Studio copy arrives. */
+html.content-loading [data-hero-title],
+html.content-loading [data-location-line],
+html.content-loading [data-intro-text],
+html.content-loading [data-session-title],
+html.content-loading [data-session-price],
+html.content-loading [data-session-duration],
+html.content-loading [data-session-location],
+html.content-loading [data-session-description],
+html.content-loading [data-faq-list],
+html.content-loading [data-content]{visibility:hidden}
